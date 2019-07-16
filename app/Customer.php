@@ -13,6 +13,16 @@ class Customer extends Model
 	// Guarded Example (the opposite)
 	protected $guarded = [];
 
+    // Eloquent Ancessor
+    public function getActiveAttribute($attribute){
+
+        return [
+            '0' => 'Inactive',
+            '1' => 'Active'
+        ][$attribute];
+    
+    }
+
     public function scopeActive($query)
     {
     	return $query->where('active', 1);
