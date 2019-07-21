@@ -21,5 +21,6 @@ Route::get('customers/{customer}', 'CustomerControllers@show');
 Route::get('customers/{customer}/edit', 'CustomerControllers@edit');
 
 Route::patch('customers/{customer}', 'CustomerControllers@update');
+Route::delete('customers/{customer}', 'CustomerControllers@destroy');
 
 Route::post('customers', 'CustomerControllers@store');

@@ -13,13 +13,14 @@ class Customer extends Model
 	// Guarded Example (the opposite)
 	protected $guarded = [];
 
+    protected $attributes = [
+        'active' => 1
+    ];
+
     // Eloquent Ancessor
     public function getActiveAttribute($attribute){
 
-        return [
-            '0' => 'Inactive',
-            '1' => 'Active'
-        ][$attribute];
+        return $this->activeOptions()[$attribute];
     
     }
 
@@ -36,5 +37,13 @@ class Customer extends Model
     public function company()
     {
     	return $this->belongsTo(Company::class);
+    }
+
+    public function activeOptions() {
+        return [
+            '1' => 'Active',
+            '0' => 'Inactive',
+            '2' => 'In-progress'
+        ];
     }
 }
