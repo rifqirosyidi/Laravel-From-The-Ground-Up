@@ -18,5 +18,8 @@ Route::view('about', 'about');
 Route::get('customers', 'CustomerControllers@index');
 Route::get('customers/create', 'CustomerControllers@create');
 Route::get('customers/{customer}', 'CustomerControllers@show');
+Route::get('customers/{customer}/edit', 'CustomerControllers@edit');
+
+Route::patch('customers/{customer}', 'CustomerControllers@update');
 
 Route::post('customers', 'CustomerControllers@store');

@@ -16,11 +16,11 @@ class CustomerControllers extends Controller
 		return view('customers.index',compact('customers'));
     }
 
-    public function create() {
+    public function create(Customer $customer) {
 
         $companies = Company::all();
 
-        return view('customers.create',compact('companies'));
+        return view('customers.create',compact('companies', 'customer'));
 
     }
 
@@ -42,5 +42,24 @@ class CustomerControllers extends Controller
 
         return view('customers.show', compact('customer'));
     
+    }
+
+    public function edit(Customer $customer) {
+
+        $companies = Company::all();
+
+        return view('customers.edit', compact('customer', 'companies'));
+    }
+
+    public function update(Customer $customer) {
+
+        $data = request()->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email'
+        ]);
+
+        $customer->update($data);
+
+        return redirect('/customers/'. $customer->id);
     }
 }
