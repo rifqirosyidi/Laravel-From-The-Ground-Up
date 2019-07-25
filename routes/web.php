@@ -12,15 +12,18 @@
 */
 
 Route::view('/', 'home');
-Route::view('contact', 'contact');
 Route::view('about', 'about');
 
-Route::get('customers', 'CustomerControllers@index');
-Route::get('customers/create', 'CustomerControllers@create');
-Route::get('customers/{customer}', 'CustomerControllers@show');
-Route::get('customers/{customer}/edit', 'CustomerControllers@edit');
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
 
-Route::patch('customers/{customer}', 'CustomerControllers@update');
-Route::delete('customers/{customer}', 'CustomerControllers@destroy');
 
-Route::post('customers', 'CustomerControllers@store');
+// Route::get('customers', 'CustomerControllers@index');
+// Route::get('customers/create', 'CustomerControllers@create');
+// Route::get('customers/{customer}', 'CustomerControllers@show');
+// Route::get('customers/{customer}/edit', 'CustomerControllers@edit');
+// Route::patch('customers/{customer}', 'CustomerControllers@update');
+// Route::delete('customers/{customer}', 'CustomerControllers@destroy');
+// Route::post('customers', 'CustomerControllers@store');
+
+Route::resource('customers', 'CustomerController');

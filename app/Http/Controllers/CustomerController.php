@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 use App\Company;
 
-class CustomerControllers extends Controller
+class CustomerController extends Controller
 {
     public function index() {
 
