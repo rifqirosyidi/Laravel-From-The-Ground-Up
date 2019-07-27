@@ -3,6 +3,8 @@
 @section('title', 'Add New Customer')
 
 @section('content')
+	
+<div class="container">
 	<div class="row">
 		<div class="col-12">
 			<h1>Add New Customer</h1>
@@ -20,5 +22,6 @@
 			</form>
 		</div>
 	</div>
+</div>
 
 @endsection

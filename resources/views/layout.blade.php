@@ -10,9 +10,15 @@
 
   @include('nav')
 
-  <div class="container">
-  	@yield('content')
-  </div>	
+  @if(session()->has('message'))
+	<div class="container">
+  	<div class="alert alert-success" role="alert">
+		<strong>Success.</strong> {{ session()->get('message') }}
+  	</div>
+  </div>
+  @endif
+
+  @yield('content')
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 </body>
