@@ -1,10 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Contact Us')
 
 @section('content')
 
-<div class="container">
 	<h1>Contact Us</h1>
 
 	@if(!session()->has('message'))
@@ -35,6 +34,5 @@
 		
 	@endif
 
-</div>
 
 @endsection

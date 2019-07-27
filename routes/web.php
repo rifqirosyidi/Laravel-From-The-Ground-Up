@@ -27,3 +27,6 @@ Route::post('contact', 'ContactFormController@store');
 // Route::post('customers', 'CustomerControllers@store');
 
 Route::resource('customers', 'CustomerController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
