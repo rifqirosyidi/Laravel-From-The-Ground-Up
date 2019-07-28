@@ -12,7 +12,7 @@
 
 	<div class="row">
 		<div class="col-12">
-			<form action="/customers" method="POST">
+			<form action="{{ route('customers.index') }}" method="POST">
 				
 				@include('customers.form')
 
